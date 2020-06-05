@@ -1,22 +1,17 @@
-<header>
+ <header>
 	<nav>
 		<ul class="main">
-			<li><a href="https://blog.jessfraz.com">{{ .Site.Title }}</a></li>
+			<li><a href="/">{{ .Site.Title }}</a></li>
 		</ul>
 		<ul class="social">
-			{{ if .RSSLink }}
 			<li>
-				<a href="{{ .RSSLink }}" class="fa fa-rss" target="_blank"></a>
-			</li>
-			{{ end }}
-			<li>
-				<a class="fa fa-linkedin" href="https://www.linkedin.com/in/jessie-frazelle/" target="_blank"></a>
+				<a class="fas fa-rss" href="{{ with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}{{ end }}" target="_blank"></a>
 			</li>
 			<li>
-				<a class="fa fa-github" href="https://github.com/jessfraz" target="_blank"></a>
+				<a class="fab fa-github" href="https://github.com/nikstar" target="_blank"></a>
 			</li>
 			<li>
-				<a class="fa fa-twitter" href="https://twitter.com/jessfraz" target="_blank"></a>
+				<a class="fab fa-telegram-plane" href="https://t.me/nikstar" target="_blank"></a>
 			</li>
 		</ul>
 	</nav>

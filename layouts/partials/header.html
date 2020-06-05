@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+	
+	<link rel="canonical" href="{{ .Permalink }}" />
+	<!-- Add RSS links for all pages, not just homepage -->
+	<link rel="alternate" type="application/rss+xml" title="nikstar/blog" href="{{ with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}{{ end }}" />
+	
+	{{ if eq .Section "post" }}
+	<title>{{ .Title }} &ndash; nikstar/blog </title>
+	<meta propery="og:site_name" content="nikstar/blog" />
+	{{ else }}
+	<title>nikstar/home</title>
+	<meta propery="og:site_name" content="nikstar/home" />
+	{{ end }}
+	
+	{{ if eq .Section "post" }}
+	{{ "<!-- Trick Telegram crawler into believing this is a Medium article -->" | safeHTML }}
+	<meta property="al:android:app_name" content="Medium" />
+	<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-0700" }}" />
+	{{ end }}
+	
+	<meta property="og:description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"/>
+	<meta property="og:image" content="/img/share.png"/>
+	<meta name="author" content="Nikita Starshinov" />
 
-	<title>{{ .Site.Title }}: {{ if eq .Section "post" }}{{ .Title }}{{ else }}Home{{ end }}</title>
-
-	<link rel="canonical" href="{{ .Permalink }}">
-	{{ if .RSSLink }}<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />{{ end }}
-
-	{{ partial "header.social.meta.html" . }}
-
-	<link rel="shortcut icon" href="/favicon.ico">
-
+	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+	<script src="https://kit.fontawesome.com/8e5bdc2583.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" rel="stylesheet">
 	<link rel="stylesheet" href="/css/site.min.css" />
 	<script src="/js/lib/modernizr-2.6.2.min.js"></script>

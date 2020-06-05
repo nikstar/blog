@@ -1,12 +1,12 @@
-baseurl = "https://blog.jessfraz.com/"
-canonifyUrls = true
+baseurl = "https://nikstar.me/"
+#canonifyUrls = true
 languageCode = "en-us"
-title = "Ramblings from Jessie"
-disableKinds = ["taxonomy", "taxonomyTerm"]
-disqusShortname = "https-blog-jessfraz-com"
+title = "nikstar/blog"
+disableKinds = ["section", "taxonomy", "taxonomyTerm"]
 
 [params]
-	description = "The blog of Jessie Frazelle, hacker of all things: systems, kernels, operating systems, etc..."
+	description = "The blog by Nikita (@nikstar) about machine learning, hacking, Telegram and other stuff I have not found yet"
+	author = "Nikita Starshinov"
 
 [markup.goldmark.renderer]
 unsafe= true
