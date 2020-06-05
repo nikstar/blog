@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+
+<div class="container single">
+    {{ partial "navbar.html" . }}
+
+	<article>
+        <h1>{{ .Title }}</h1>
+		<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+		{{ .Content }}
+	</article>
+	<section class="comments">
+		{{ template "_internal/disqus.html" . }}
+	</section>
+</div>
+
+{{ partial "footer.html" . }}

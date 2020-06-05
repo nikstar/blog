@@ -1,0 +1,54 @@
+{{ partial "header.html" . }}
+
+<div class="container home">
+
+    {{ partial "navbar.html" . }}
+
+    <h1>Publications</h2>
+    {{ range sort $.Site.Data.publication "date" "desc" }}
+    <article class="publication">
+        <h3>
+            {{ .title }}
+        </h3>
+        <div class="time">
+            <a href="{{ .link }}" target="_blank" title="{{ .title }}" >{{.publication}}: {{ dateFormat "January 2006" .date }}</a>
+            <small>[<a href="/pdf/{{.pdf}}" target="_blank" title="{{.title}} pdf">PDF</a>]</small>
+        </div>
+        {{if .cacm}}<div class="time">
+            <a href="{{ .cacm }}" target="_blank" title="{{ .title }}" >Communications of the ACM: {{ dateFormat "January 2006" .cacmdate }}</a>
+        </div>{{end}}
+        <p>{{ .subtitle }}</p>
+    </article>
+    {{end}}
+
+
+    <h1>Blog</h1>
+
+    <h2>Featured</h2>
+    {{ range .Site.Pages.ByDate.Reverse }}
+    {{ if .Params.featured }}
+    <article>
+        <h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3>
+        <p>{{ .Description }}</p>
+    </article>
+    {{ end }}
+    {{ end }}
+
+    <hr/>
+
+    {{ range .Site.Pages.ByDate.Reverse }}
+    {{ if not .Params.featured }}
+    {{ if ne .Title "Posts" }}
+    {{ if ne .Title "Ramblings from Jessie" }}
+    <article>
+        <h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3>
+        <div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+        <p>{{ .Summary }}</p>
+    </article>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+</div>
+
+{{ partial "footer.html" . }}
