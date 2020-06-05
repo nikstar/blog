@@ -2,7 +2,7 @@
 
 Source code for [nikstar.me](https://nikstar.me).
 
-### Development
+### Develop
 
 ```bash
 hugo serve
