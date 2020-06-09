@@ -1,48 +1,5 @@
 	<footer>&copy; Nikita Starshinov {{ now.Format "2006" }}
 		<a class="pull-right" href="https://t.me/nikstar" target="_blank">@nikstar</a>
 	</footer>
-
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        displayMath: [['$$','$$'], ['\[','\]']],
-        processEscapes: true,
-        processEnvironments: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        TeX: { equationNumbers: { autoNumber: "AMS" },
-             extensions: ["AMSmath.js", "AMSsymbols.js"] }
-      }
-    });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        // Make the font size responsive.
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i = 0; i < all.length; i += 1) {
-            var w = all[i].SourceElement().offsetWidth;
-            var W = all[i].SourceElement().parentNode.offsetWidth - 40;
-          if (w > W) {
-            all[i].SourceElement().style.fontSize = (95*W/w)+"%";
-            MathJax.Hub.getAllJax()[i].Rerender();
-          }
-        }
-    });
-    </script>
-
-    <!-- Polyfill for mathjax 3 -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script src="/js/site.min.js"></script>
-
-    <script>
-        function doPrettyPrint(){
-            pres=document.getElementsByTagName('pre');
-            for (i=0; i < pres.length; i++) {
-                pres[i].className+=" prettyprint";
-            }
-            prettyPrint();
-        }
-    </script>
-
 </body>
 </html>

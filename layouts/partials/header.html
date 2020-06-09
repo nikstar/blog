@@ -6,7 +6,6 @@
 	<meta name="description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 	
 	<link rel="canonical" href="{{ .Permalink }}" />
-	<!-- Add RSS links for all pages, not just homepage -->
 	<link rel="alternate" type="application/rss+xml" title="nikstar/blog" href="{{ with .Site.GetPage "/" }}{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}{{ end }}" />
 	
 	{{ if eq .Section "post" }}
@@ -29,9 +28,7 @@
 	
 	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
 	<script src="https://kit.fontawesome.com/8e5bdc2583.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" rel="stylesheet">
-	<!-- <link rel="stylesheet" href="/css/site.min.css" /> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" >
 	<link rel="stylesheet" href="/css/main.css" />
-	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
 </head>
 <body onload="doPrettyPrint()">
