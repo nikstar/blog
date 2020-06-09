@@ -244,7 +244,7 @@ a:focus {
     text-decoration: none;
     border-bottom: 1px solid #105edd;
 }
-header {
+header#nav {
     background: rgba(255, 255, 255, 0.9);
     padding: 10px 0px;
     width: 90%;
@@ -258,16 +258,16 @@ header {
     text-align: center;
     margin-bottom: 20px;
 }
-header:before,
-header:after {
+header#nav:before,
+header#nav:after {
     display: table;
     content: "";
     line-height: 0;
 }
-header:after {
+header#nav:after {
     clear: both;
 }
-header nav {
+header#nav nav {
     *zoom: 1;
     position: relative;
     width: 100%;
@@ -275,55 +275,55 @@ header nav {
     padding: 0;
     font-size: 16px;
 }
-header nav:before,
-header nav:after {
+header#nav nav:before,
+header#nav nav:after {
     display: table;
     content: "";
     line-height: 0;
 }
-header nav:after {
+header#nav nav:after {
     clear: both;
 }
-header nav ul {
+header#nav nav ul {
     margin: 0;
     padding: 0;
     position: relative;
     list-style: none;
 }
-header nav ul.main {
+header#nav nav ul.main {
     float: left;
 }
-header nav ul li {
+header#nav nav ul li {
     display: inline-block;
     margin: 0px 5px;
 }
-header nav ul li a {
+header#nav nav ul li a {
     line-height: 30px;
     border-bottom: none;
 }
-header nav ul li a:hover,
-header nav ul li a:focus {
+header#nav nav ul li a:hover,
+header#nav nav ul li a:focus {
     text-decoration: none;
     border-bottom: none;
 }
-header nav ul.main li {
+header#nav nav ul.main li {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 16px;
 }
-header nav ul.main li a {
+header#nav nav ul.main li a {
     border-bottom: none;
     font-weight: bold;
 }
-header nav ul.main li a:hover,
-header nav ul.main li a:focus {
+header#nav nav ul.main li a:hover,
+header#nav nav ul.main li a:focus {
     text-decoration: none;
     border-bottom: none;
 }
-header nav ul.social {
+header#nav nav ul.social {
     float: right;
 }
-header nav ul.social li {
+header#nav nav ul.social li {
     float: right;
     font-size: 100%;
     margin: 0px 10px;
@@ -569,17 +569,17 @@ table > tfoot > tr.success > th {
  * Some font-size tweaks for smaller screens
  */
 @media screen and (max-width: 480px) {
-    header nav {
+    header#nav nav {
         font-size: 75%;
     }
 
-    header nav ul.main li {
+    header#nav nav ul.main li {
         font-size: 90%;
     }
 }
 
 @media screen and (max-width: 340px) {
-    header nav ul.social li {
+    header#nav nav ul.social li {
         font-size: 80%;
         margin: 5px;
     }

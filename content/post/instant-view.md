@@ -63,14 +63,15 @@ The best way to make your page work is to use <i><a href="https://instantview.te
 
 ```xpath
 ~version: "2.1"
-title: //h1
 body: //article
+title: //article//h1
 ```
 
 Start by placing article content inside `article` tag and making sure title uses `h1` tag. This should be enough to make Instant View work. From this point continue to adapt the source code fixing any issues by changing tags to what Telegram expects: refer to the "HTML counterpart" column in [this table](https://instantview.telegram.org/docs#supported-types). Use [@WebpageBot](https://t.me/WebpageBot) to force Instant View to update.
 
+Place elements you wish to remove in Instant View inside `header` and `footer` tags. For example, on this page date is placed in `article header div` and is not shown in Instant View. Title (`article header h1`) is set before the entire header is removed.
 
-Cover image (shown above title inside Insant View) can be added be placing following block inside `article`.
+Cover image (shown above title inside Instant View) can be added be placing following block inside `article`.
 
 ```html
 <section class="is-imageBackgrounded">
@@ -82,7 +83,7 @@ Cover image (shown above title inside Insant View) can be added be placing follo
 
 This code is specific to Medium template.
 
-In fact, instead of using `article` and other semantic tags as suggested above, you can go ahead and match page structure of any Medium article, and this should generate Instant View just as well.
+In fact, instead of using `article` and other semantic tags as suggested above, you can go ahead and match page structure of any Medium article, and this should generate Instant View just as well. Copy [sample Medium template](https://instantview.telegram.org/samples/medium.com) into [a custom template](https://instantview.telegram.org/my) to debug any issues.
 
 
 ## Conclusion
