@@ -5,8 +5,10 @@
     {{ partial "navbar.html" . }}
 
 	<article>
-        <h1>{{ .Title }}</h1>
-		<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+        <header>
+			<h1>{{ .Title }}</h1>
+			<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+		</header>
 		{{ .Content }}
 	</article>
 </div>

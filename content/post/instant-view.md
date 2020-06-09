@@ -5,82 +5,102 @@ description = "Steps to add Telegram Instant View support for custom domains"
 featured = false
 +++
 
-<p>
-    In my <a href="/blog/instant-view-for-custom-domain.html">previous post</a> I showed a way IV can be added to any domain by modifying server configuration and cross-posting to WordPress. Turns out there's a much simpler way to achieve this by disguising your page as a Medium article. Access to server config and WP is no longer required.
-    
-</p>
-<p>
-    Big thank you to <a href="https://t.me/fishchev">Misho</a>, <a href="https://t.me/corbee">Illia</a>, w3drt46523trc26, max, 𝔸 · 𝕄, prettydude and everyone in <a href="https://t.me/instantview_russian">Russian Instant View chat</a> for discovering this. 
-</p>
-<p>
-    Two things need to be changed in the page source: meta tags and general page structure.
-</p>
+If you want to add Instant View support for your website, the only official recourse you have is to [create a template](https://instantview.telegram.org/my/), submit it, [request](https://instantview.telegram.org/contest#target-domains) for it to be included and [wait](/img/soon.webp). There is no official word for how long it takes to review or even a guarantee that your domain will ever be accepted. I haven't heard of any cases where templates for small blogs or media were added after following this process.
 
-<h2>
-    Meta tags
-</h2>
-<ul>
-    <li>
-        <p><code>&lt;meta property="al:android:app_name" content="Medium" /&gt;<br/></code></p>
-        <p>This will make Telegram use Medium template for our article</p>
-    </li>
-    <li>
-        <p><code>&lt;meta property="article:published_time" content="2020-02-02T02:02:02.000Z" /&gt;<br/></code></p>
-        <p>Setting date is <b>required</b> due to specifics of Medium template</p>
-    </li>
-    <li>
-        <p><code>
-            &lt;meta property="og:site_name" content="SITE_NAME" /&gt;<br/>
-            &lt;meta property="og:description" content="DESCRIPTION" /&gt;<br/>
-            &lt;meta property="og:image" content="PREVIEW_IMAGE_URL" /&gt;<br/>
-            &lt;meta name="author" content="AUTHOR_NAME" /&gt;<br/>
-        </code></p>
-        <p>Other tags needed to fill out preview</p>
-    </li>
-    <li>
-        <p></p><code>&lt;meta name="telegram:channel" content="@YOUR_CHANNEL"&gt;<br/></code></p>
-        <p>You can even add a link to your telegram channel</p>
-    </li>
-</ul>
+Luckily there's another way to get Instant View by disguising your page as a Medium article. This includes adding some meta tags and slightly modifying page structure. 
 
-<h2>
-    Page structure
-</h2>
-<p>
-    Page HTML should be structured so that Medium template works with it. We can't know exactly what this template contains but there is a sample version <a href="https://instantview.telegram.org/samples/medium.com/">available</a>. You can copy it to a <a href="https://instantview.telegram.org/my/">custom template</a> to debug any issues. Live template for Medium is more extensive than the sample and supports more complex layouts. Try, test, iterate.
-</p>
-<p>
-    The best way to make your page work is to use <i><a href="https://instantview.telegram.org/docs#supported-types">native IV markup</a></i>: something that would work with the most basic template
-</p>
-<p><code>
-    ~version: "2.1"<br/>
-    title: //h1<br/>
-    body: //article<br/>
-</code></p>
-<p>
-    For example, article text should be placed inside <code>&lt;article&gt;</code>, picture captions inside <code>&lt;figure&gt;&lt;figcaption&gt;</code>, etc.
-</p>
-<p>
-    Alternatively you could try to replicate Medium page structure; this will work too. 
-</p>
-<p>
-    Cover image can be added be placing following block inside <code>&lt;article&gt;</code>:
-</p>
-<p><code><pre>&lt;section class="is-imageBackgrounded">
-&lt;figure>
-&lt;img src="https://i.imgur.com/ea3mHTv.png"/>
-&lt;/figure>
-&lt;/section></pre></code></p>
+Big thank you to folks in [Russian Instant View chat](https://t.me/instantview_russian) for discovering this. 
 
-<h2>Limitations</h2>
-<p>
-    No matter what you do with the page structure, you are still stuck with Medium template. Looks like there is no way to set <code>kicker</code>, <code>author_url</code> and <code>document_url</code>.
-</p>
+## Meta tags
 
-<hr/>
-<p>
-    And this is it. Much nicer than before.
-</p>
-<p>
-    Thanks for reading. <a href="https://t.me/nikstar">Get in touch on Telegram.</a>
-</p>
+The following two tags will trick Telegram into using Medium template for our site.
+
++ ```html
+  <meta property="al:android:app_name" content="Medium" />
+  ```
+  This will make Telegram use Medium template for our article. As far as we know this does not break anything, even if user has Android Medium app installed.
+
++ ```html
+  <meta property="article:published_time" content="2020-02-02T00:00:00.000Z" />
+  ```
+  Setting date is required due to specifics of Medium template.
+
+Additional tags are used to set up _webpage preview_ (the block you see in the chat above Instant View button). These are optional.
+
++ ```html
+  <meta property="og:site_name" content="SITE_NAME" />
+  ```
+  Shows correct site name instead of default "Medium".
+
++ ```html
+  <meta property="og:description" content="DESCRIPTION"  />
+  ```
+  A short description.
+
++ ```html
+  <meta property="og:image" content="PREVIEW_IMAGE_URL" />
+  ```
+  A preview image.
+
+Following tags modify parts of the Instant View page itself.
+
++ ```html
+  <meta name="author" content="AUTHOR_NAME" />
+  ```
+  Author name will be shown below title next to the date. Add multiple tags for multiple authors.
+
++ ```html
+  <meta name="telegram:channel" content="@YOUR_CHANNEL />
+  ```
+  A link to a Telegram channel with a "Join" button can be shown at the top of the article. Note that this value must start with `@`.
+
+
+## Page structure
+
+*You can refer to the source of this article as a starting point.*
+
+The best way to make your page work is to use <i><a href="https://instantview.telegram.org/docs#supported-types">native IV markup</a></i>, i.e. something that would work with the most basic template:
+
+```xpath
+~version: "2.1"
+title: //h1
+body: //article
+```
+
+Start by placing article content inside `article` tag and making sure title uses `h1` tag. This should be enough to make Instant View work. From this point continue to adapt the source code fixing any issues by changing tags to what Telegram expects: refer to the "HTML counterpart" column in [this table](https://instantview.telegram.org/docs#supported-types). Use [@WebpageBot](https://t.me/WebpageBot) to force Instant View to update.
+
+
+Cover image (shown above title inside Insant View) can be added be placing following block inside `article`.
+
+```html
+<section class="is-imageBackgrounded">
+  <figure>
+    <img src="https://i.imgur.com/ea3mHTv.png"/>
+  </figure>
+</section>
+```
+
+This code is specific to Medium template.
+
+In fact, instead of using `article` and other semantic tags as suggested above, you can go ahead and match page structure of any Medium article, and this should generate Instant View just as well.
+
+
+## Conclusion
+
+Unfortunately, not all available [properties](https://instantview.telegram.org/docs#instant-view-format) can be set while using Medium template. Looks like there is no way to set `kicker`, `author_url` and `document_url`. If you find a way, please share it [with me][me].
+
+And this is it. This method is a good solution for standalone blogs and small-scale websites that are unlikely to receive official support soon.
+
+If you believe significantly changing page structure would be too difficult or bad for SEO, you might want to create a special version of each page similar to Google's AMP and then redirect Telegram crawler to it. Here is a snippet for nginx:
+
+```perl
+if ( $http_user_agent ~ 'TelegramBot' ) {
+    return 301 /iv/$request_uri;
+}
+```
+
+In this example `/iv/hello.html` is a simplified, Instant View compatible version of `/hello.html`. This was the [first method](/blog/instant-view-for-custom-domain) discovered before the Medium trick was found.
+
+Thanks for reading. Feel free to [reach out][me] if you have any questions.
+
+[me]: https://t.me/nikstar

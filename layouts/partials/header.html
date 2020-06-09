@@ -11,10 +11,10 @@
 	
 	{{ if eq .Section "post" }}
 	<title>{{ .Title }} &ndash; nikstar/blog </title>
-	<meta propery="og:site_name" content="nikstar/blog" />
+	<meta property="og:site_name" content="nikstar/blog" />
 	{{ else }}
 	<title>nikstar/home</title>
-	<meta propery="og:site_name" content="nikstar/home" />
+	<meta property="og:site_name" content="nikstar/home" />
 	{{ end }}
 	
 	{{ if eq .Section "post" }}
@@ -26,11 +26,12 @@
 	<meta property="og:description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"/>
 	<meta property="og:image" content="/img/share.png"/>
 	<meta name="author" content="Nikita Starshinov" />
-
+	
 	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
 	<script src="https://kit.fontawesome.com/8e5bdc2583.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href="/css/site.min.css" />
+	<!-- <link rel="stylesheet" href="/css/site.min.css" /> -->
+	<link rel="stylesheet" href="/css/main.css" />
 	<script src="/js/lib/modernizr-2.6.2.min.js"></script>
 </head>
 <body onload="doPrettyPrint()">

@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 p {
-    margin: 1em 0;
+    margin: 20px 0 20px 0;
 }
 .lead {
     margin-bottom: 1.7;
@@ -53,7 +53,7 @@ h5,
 h6 {
     margin: 0.85 0;
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 130%;
     color: inherit;
     text-rendering: optimizelegibility;
@@ -207,7 +207,7 @@ body {
     -webkit-font-smoothing: antialiased;
     margin: 0;
     font-family: 'IBM Plex Sans', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.05rem;
+    font-size: 20px;
     line-height: 1.8;
     color: #333333;
     background-color: #ffffff;
