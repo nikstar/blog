@@ -3,6 +3,7 @@ date = "2020-06-05T16:42:00+03:00"
 title = "Instant View for Custom Domains"
 description = "Steps to add Telegram Instant View support for custom domains"
 featured = false
+aliases = [ "/blog/instant-view-for-custom-domain-v2" ]
 +++
 
 If you want to add Instant View support for your website, the only official recourse you have is to [create a template](https://instantview.telegram.org/my/), submit it, [request](https://instantview.telegram.org/contest#target-domains) for it to be included and [wait](/img/soon.webp). There is no official word for how long it takes to review or even a guarantee that your domain will ever be accepted. I haven't heard of any cases where templates for small blogs or media were added after following this process.
