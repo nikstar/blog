@@ -51,7 +51,7 @@ Following tags modify parts of the Instant View page itself.
   Author name will be shown below title next to the date. Add multiple tags for multiple authors.
 
 + ```html
-  <meta name="telegram:channel" content="@YOUR_CHANNEL />
+  <meta name="telegram:channel" content="@YOUR_CHANNEL" />
   ```
   A link to a Telegram channel with a "Join" button can be shown at the top of the article. Note that this value must start with `@`.
 
