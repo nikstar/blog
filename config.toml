@@ -1,5 +1,4 @@
 baseurl = "https://nikstar.me/"
-#canonifyUrls = true
 languageCode = "en-us"
 title = "nikstar/blog"
 disableKinds = ["section", "taxonomy", "taxonomyTerm"]
