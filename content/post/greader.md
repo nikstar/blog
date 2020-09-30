@@ -2,6 +2,7 @@
 title: "G Reader: RSS client for Telegram"
 date: 2020-09-24T00:00:00+03:00
 description: "G Reader is a new RSS bot for Telegram"
+cover: "/img/greader-cover.png"
 ---
 
 G Reader is a new RSS bot for Telegram. You can check it out here: [@GReaderBot](https://t.me/greaderbot). 

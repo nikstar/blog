@@ -7,5 +7,19 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm"]
 	description = "The blog by Nikita (@nikstar) about machine learning, hacking, Telegram and other stuff I have not found yet"
 	author = "Nikita Starshinov"
 
-[markup.goldmark.renderer]
-unsafe= true
+[markup]
+  	[markup.highlight]
+		anchorLineNos = false
+		codeFences = true
+		guessSyntax = false
+		hl_Lines = ""
+		lineAnchors = ""
+		lineNoStart = 1
+		lineNos = false
+		lineNumbersInTable = true
+		noClasses = true
+		style = "xcode"
+		tabWidth = 4
+
+	[markup.goldmark.renderer]
+		unsafe= true

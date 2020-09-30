@@ -23,12 +23,13 @@
 	{{ end }}
 	
 	<meta property="og:description" content="{{ if eq .Section "post" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}"/>
-	<meta property="og:image" content="/img/share.png"/>
+	{{ if isset .Params "cover" }}
+	<meta property="og:image" content="{{ .Params.cover }}"/>
+	{{ else }}
+	<!-- TODO: Generic share image -->
+	{{ end }}
 	<meta name="author" content="Nikita Starshinov" />
 	
-	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
-	<script src="https://kit.fontawesome.com/8e5bdc2583.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,400i|IBM+Plex+Sans:100,100i,400,400i,700,700i" >
 	<link rel="stylesheet" href="/css/main.css" />
 </head>
-<body onload="doPrettyPrint()">
+<body>

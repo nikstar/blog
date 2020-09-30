@@ -6,6 +6,13 @@
 
 	<article>
         <header>
+			{{ if isset .Params "cover" }}
+			<section class="is-imageBackgrounded">
+				<figure>
+				  <img src="{{ .Params.cover }}"/>
+				</figure>
+			</section>
+			{{ end }}
 			<h1>{{ .Title }}</h1>
 			<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
 		</header>
