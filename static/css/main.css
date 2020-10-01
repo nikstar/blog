@@ -39,16 +39,23 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.05rem;
     line-height: 1.8;
-    color: #333333;
+    color: #222222;
     background-color: #ffffff;
     text-align: center;
     display: block;
     min-height: 100%;
     width: 100%;
     height: 100%;
+    
+    position: relative;
+    max-width: 700px;
+    text-align: left;
+    margin: 0px auto;
 }
-p {
-    margin: 1em 0;
+body > nav,
+body > main,
+body > footer {
+    margin: 0px 20px;
 }
 h1,
 h2,
@@ -72,6 +79,15 @@ h3 {
 }
 h4 {
     font-size: 20px;
+}
+.home h3 {
+    margin: 5px 0px;
+}
+p {
+    margin: 1em 0;
+}
+.home p {
+    margin-top: 0px;
 }
 ul,
 ol {
@@ -108,14 +124,6 @@ blockquote p {
     line-height: 1.5;
     color: #555555;
 }
-.container, footer {
-    position: relative;
-    max-width: 700px;
-    overflow: hidden;
-    margin: 0 auto;
-    text-align: left;
-    padding: 0px 20px 50px 20px;
-}
 a {
     color: #4788f2;
     text-decoration: none;
@@ -130,45 +138,43 @@ a:focus {
 }
 
 /* main header */
-header#nav {
-    padding: 10px 0px;
-    width: 95%;
-    width: calc(100% - 10px);
-    height: 30px;
+nav {
+    padding: 10px 0px 0px;
+    height: 40px;
     display: block;
     margin-bottom: 15px;
 }
-header#nav nav ul {
+nav ul {
     margin: 0;
     padding: 0;
     position: relative;
     list-style: none;
 }
-header#nav nav ul.main {
+nav ul li a {
+    border-bottom: none;
+    font-weight: bold;
+}
+nav ul.main {
     float: left;
 }
-header#nav nav ul.main li {
+nav ul.main li {
     display: inline-block;
-    margin: 0px 5px;
+    /* margin: 0px 5px; */
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     font-weight: normal;
     font-size: 16px;
     text-decoration: none;
     border-bottom: none;
 }
-header#nav nav ul li a {
-    border-bottom: none;
-    font-weight: bold;
-}
-header#nav nav ul.social {
+nav ul.social {
     float: right;
 }
-header#nav nav ul.social li {
+nav ul.social li {
     float: right;
     font-size: 100%;
     margin: 0px 10px;
 }
-header#nav nav ul.social svg {
+nav ul.social svg {
     color: inherit;
     overflow: visible;
     width: .875em;
@@ -192,20 +198,13 @@ section.is-imageBackgrounded img {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     font-weight: bold;
 }
+.home .time {
+    margin-bottom: 5px;
+}
 
 /* article */
 article {
     margin-bottom: 60px;
-    *zoom: 1;
-}
-article:before,
-article:after {
-    display: table;
-    content: "";
-    line-height: 0;
-}
-article:after {
-    clear: both;
 }
 .home article {
     margin-bottom: 20px;
@@ -273,7 +272,7 @@ p > code { /* inline code */
 /* footer */
 footer {
     position: relative;
-    padding: 10px 20px;
+    padding: 50px 0px 20px;
     display: block;
     text-align: left;
     font-size: 70%;
@@ -286,21 +285,6 @@ footer a:focus {
 }
 .pull-right {
     float: right;
-}
-.pull-left {
-    float: left;
-}
-.hide {
-    display: none;
-}
-.show {
-    display: block;
-}
-.invisible {
-    visibility: hidden;
-}
-.affix {
-    position: fixed;
 }
 
 /* tables */
@@ -433,17 +417,17 @@ table > tfoot > tr.success > th {
  * Some font-size tweaks for smaller screens
  */
 @media screen and (max-width: 480px) {
-    header#nav nav {
+    nav {
         font-size: 75%;
     }
 
-    header#nav nav ul.main li {
+    nav ul.main li {
         font-size: 90%;
     }
 }
 
 @media screen and (max-width: 340px) {
-    header#nav nav ul.social li {
+    nav ul.social li {
         font-size: 80%;
         margin: 5px;
     }
@@ -470,33 +454,6 @@ table > tfoot > tr.success > th {
     }
 }
 
-.home h3 {
-    margin: 5px 0px;
-}
-
-.home .time {
-    margin-bottom:5px;
-}
-
-.home p {
-    margin-top: 0px;
-}
-
-.home article.publication {
-    margin-bottom: 0px;
-}
-
-.footnotes {
-    font-size: 80%;
-}
-
-.footnotes p {
-    margin: 0;
-}
-
-.footnotes li {
-    margin-bottom: 5px;
-}
 
 /* Mathjax */
 p * {
