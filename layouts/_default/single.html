@@ -14,7 +14,9 @@
 			</section>
 			{{ end }}
 			<h1>{{ .Title }}</h1>
+			{{ if isset .Params "date" }}
 			<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+			{{ end }}
 		</header>
 		{{ .Content }}
 	</article>
