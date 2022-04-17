@@ -35,6 +35,36 @@ img.squircle{
     height: 200px;
 }
 
+/* demo */
+
+section.demo-items {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+section.demo-items a:hover {
+    border: none;
+}
+
+img.ios {
+    border-radius: 22.5%;
+}
+
+img.demo {
+    max-height: 150px; 
+}
+
+div.demo-item {
+    text-align: center;
+    font-weight: bold;
+}
+
+div.tagline {
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+
 
 /* <svg height="0" width="0" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <defs>
