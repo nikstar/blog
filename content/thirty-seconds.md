@@ -8,9 +8,12 @@ description: "30 Seconds is an iOS one-time password manager"
 </figure>
 
 
+30 Seconds is the nicest app for you two-factor authentication codes.
 
-30 Seconds is an iOS one-time password manager.
+It has rich customization options that make each account instantly recognizable.
 
-Coming soon to the App Store.
+Completely offline. Never 'phones home', no analytics.
 
-<!-- Check it out on [App Store](https://apps.apple.com/us/app/sticker-maker-for-telegram/id1575085196). -->
+Compatible with all popular websites.
+
+Check it out on the [App Store](https://apps.apple.com/us/app/30-seconds-2fa-codes/id1619631829).
