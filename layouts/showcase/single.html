@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+
+<main class="single">
+    {{ partial "navbar.html" . }}
+
+	<article class="showcase">
+        <header>
+			{{ if isset .Params "cover" }}
+			<section class="is-imageBackgrounded">
+				<figure class="showcase-cover {{ if isset .Params "ios-app" }}ios{{end}}">
+				  <img src="{{ .Params.cover }}"/>
+				</figure>
+			</section>
+			{{ end }}
+			<h1>{{ .Title }}</h1>
+			{{ if isset .Params "date" }}
+			<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
+			{{ end }}
+		</header>
+		{{ .Content }}
+	</article>
+</main>
+
+{{ partial "footer.html" . }}

@@ -22,7 +22,7 @@
             </a>
         </div>
         <div class="demo-item">
-            <a href="/post/greader">
+            <a href="/greader">
                 <img class="demo" src="/img/greader-icon.png" alt="Stickers icon" />
                 <div>G Reader</div>
                 <div class="tagline">RSS bot for Telegram</div>
@@ -47,16 +47,12 @@
     <hr/> -->
 
     {{ range .Site.Pages.ByDate.Reverse }}
-    {{ if not .Params.featured }}
-    {{ if ne .Title "Posts" }}
-    {{ if ne .Title "nikstar/blog" }}
+    {{ if isset .Params "date" }}
     <article>
         <h3><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h3>
         <div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
         <p>{{ .Summary }}</p>
     </article>
-    {{ end }}
-    {{ end }}
     {{ end }}
     {{ end }}
 </main>

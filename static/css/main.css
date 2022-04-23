@@ -501,6 +501,19 @@ table > tfoot > tr.success > th {
 }
 
 
+article.showcase h1 {
+    text-align: center;
+}
+
+article.showcase figure.showcase-cover {
+    text-align: center;
+}
+
+figure.ios img {
+    border-radius: 22.5%;    
+    max-height: 200px;
+}
+
 /* Mathjax */
 p * {
     font-size: inherit;

@@ -1,12 +1,10 @@
 ---
 title: "30 Seconds"
 description: "30 Seconds is an iOS one-time password manager"
+cover: "/img/thirty-seconds-icon.png"
+type: showcase
+ios-app: true
 ---
-
-<figure>
-    <img class="squircle" src="/img/thirty-seconds-icon.png"/>
-</figure>
-
 
 30 Seconds is the nicest app for you two-factor authentication codes.
 
