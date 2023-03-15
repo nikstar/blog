@@ -1,10 +1,7 @@
 {{ partial "header.html" . }}
-
-
-<main class="single">
+<main>
     {{ partial "navbar.html" . }}
-
-	<article class="showcase">
+	<article>
         <header>
 			{{ if isset .Params "cover" }}
 			<section class="is-imageBackgrounded">
@@ -21,5 +18,4 @@
 		{{ .Content }}
 	</article>
 </main>
-
 {{ partial "footer.html" . }}

@@ -19,28 +19,33 @@ The following two tags will trick Telegram into using Medium template for our si
 + ```html
   <meta property="al:android:app_name" content="Medium" />
   ```
+
   This will make Telegram use Medium template for our article. As far as we know this does not break anything, even if user has Android Medium app installed.
 
 + ```html
   <meta property="article:published_time" content="2020-02-02T00:00:00.000Z" />
   ```
+
   Setting date is required due to specifics of Medium template.
 
-Additional tags are used to set up _webpage preview_ (the block you see in the chat above Instant View button). These are optional.
+Additional tags are used to set up *webpage preview* (the block you see in the chat above Instant View button). These are optional.
 
 + ```html
   <meta property="og:site_name" content="SITE_NAME" />
   ```
+
   Shows correct site name instead of default "Medium".
 
 + ```html
   <meta property="og:description" content="DESCRIPTION"  />
   ```
+
   A short description.
 
 + ```html
   <meta property="og:image" content="PREVIEW_IMAGE_URL" />
   ```
+
   A preview image.
 
 Following tags modify parts of the Instant View page itself.
@@ -48,19 +53,20 @@ Following tags modify parts of the Instant View page itself.
 + ```html
   <meta name="author" content="AUTHOR_NAME" />
   ```
+
   Author name will be shown below title next to the date. Add multiple tags for multiple authors.
 
 + ```html
   <meta name="telegram:channel" content="@YOUR_CHANNEL" />
   ```
-  A link to a Telegram channel with a "Join" button can be shown at the top of the article. Note that this value must start with `@`.
 
+  A link to a Telegram channel with a "Join" button can be shown at the top of the article. Note that this value must start with `@`.
 
 ## Page structure
 
 *You can refer to the source of this article as a starting point.*
 
-The best way to make your page work is to use <i><a href="https://instantview.telegram.org/docs#supported-types">native IV markup</a></i>, i.e. something that would work with the most basic template:
+The best way to make your page work is to use *[native IV markup](https://instantview.telegram.org/docs#supported-types)*, i.e. something that would work with the most basic template:
 
 ```xpath
 ~version: "2.1"
@@ -101,7 +107,7 @@ if ( $http_user_agent ~ 'TelegramBot' ) {
 }
 ```
 
-In this example `/iv/hello.html` is a simplified, Instant View compatible version of `/hello.html`. This was the [first method](/blog/instant-view-for-custom-domain) discovered before the Medium trick was found.
+In this example `/iv/hello.html` is a simplified, Instant View compatible version of `/hello.html`. This was the [first method](http://web.archive.org/web/20221003021256/https://nikstar.me/blog/instant-view-for-custom-domain/) discovered before the Medium trick was found.
 
 Thanks for reading. Feel free to [reach out][me] if you have any questions.
 

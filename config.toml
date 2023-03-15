@@ -11,15 +11,15 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm"]
   	[markup.highlight]
 		anchorLineNos = false
 		codeFences = true
-		guessSyntax = false
+		guessSyntax = true
 		hl_Lines = ""
 		lineAnchors = ""
 		lineNoStart = 1
 		lineNos = false
 		lineNumbersInTable = true
 		noClasses = true
-		style = "xcode"
-		tabWidth = 4
+		style = "xcode-dark"
+		tabWidth = 2
 
 	[markup.goldmark.renderer]
 		unsafe= true
