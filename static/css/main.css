@@ -92,7 +92,6 @@ nav .home {
 
 nav .social li {
     float: right;
-    font-size: 100%;
     margin: 0px 12px;
 }
 
@@ -101,7 +100,6 @@ nav ul.social svg {
     overflow: visible;
     width: .875em;
     display: inline-block;
-    font-size: inherit;
     height: 1em;
     overflow: visible;
     vertical-align: -.125em;
@@ -218,16 +216,18 @@ figure {
 }
 
 figcaption {
-    font-size: 75%;
+    font-size: 0.75rem;
 }
 
 code, pre {
     font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
     color: var(--text-color);
     background-color: var(--secondary-background-color);
 }
 
 code {
+    font-weight: 600;
     padding: 2px 8px;
     margin: auto 4px;
     color: var(--code-color);
@@ -235,7 +235,7 @@ code {
 }
 
 pre {
-    font-size: 14px;
+    font-weight: 400;
     display: block;
     padding: 0 15px;
     margin: auto 10px auto 0px;
@@ -245,7 +245,8 @@ pre {
     border-radius: 8px;
 }
 
-pre code {
+pre > code {
+    font-weight: 400;
     padding: 0;
     color: inherit;
 }

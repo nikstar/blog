@@ -165,6 +165,7 @@ example.com {
 			roll_keep 1
 		}
 	}
+	...
 }
 ```
 
@@ -259,6 +260,6 @@ example.com {
 
 Now adding a new service will take just 5 lines.
 
-<br><br>
+<br/>
 
 And just like that we have a fresh new web server with password-protected services.
