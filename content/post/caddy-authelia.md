@@ -1,8 +1,8 @@
 ---
 title: Private server with Caddy and Authelia
 date: 2024-02-18T18:44:08Z
-draft: true
-toc: true
+draft: false
+toc: false
 ---
 
 I wanted to password-protect some parts of my personal website. In the process I switched from Nginx to Caddy and implemented sign in using Authelia. This transition was fairly straightforward and I wish I’d done it sooner.
