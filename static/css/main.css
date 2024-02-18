@@ -36,7 +36,7 @@ html {
     --link-hover-color: #105edd;
     --secondary-text-color: #666;
     --secondary-background-color: #f7f7f9;
-    --code-color: #d14;
+    --code-color: rgb(196, 15, 60);
 }
 
 @media screen and (prefers-color-scheme: dark) {
