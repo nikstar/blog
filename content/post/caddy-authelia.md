@@ -172,7 +172,7 @@ example.com {
 Caddy really wants you to use structured logs so it's best not to fight it but instead parse them with `jq`:
 
 ```bash
-sudo tail -f /var/log/caddy/example.com-access.log | jq -r '[.request.client_ip,.request.method,.request.uri,.status] | @tsv'
+sudo tail -f /var/log/caddy/example.com-access.log | jq -r '[.request.client_ip, .request.method, .request.uri, .status] | @tsv'
 ```
 This will show recent accesses as a nice table:
 ```tsv

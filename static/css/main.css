@@ -240,7 +240,7 @@ pre {
     padding: 0 15px;
     margin: auto 10px auto 0px;
     line-height: 120%;
-    white-space: pre;
+    /* white-space: pre; */
     white-space: pre-wrap;
     border-radius: 8px;
 }
