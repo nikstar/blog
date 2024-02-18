@@ -3,7 +3,6 @@
 
 <main class="single">
     {{ partial "navbar.html" . }}
-
 	<article>
         <header>
 			{{ if isset .Params "cover" }}
@@ -18,6 +17,11 @@
 			<div class="time">{{ .Date.Format "Monday, January 2, 2006" }}</div>
 			{{ end }}
 		</header>
+		<!-- {{ if .Params.toc }}
+		<aside>
+			{{ .TableOfContents }}
+		</aside>	
+		{{ end }} -->
 		{{ .Content }}
 	</article>
 </main>

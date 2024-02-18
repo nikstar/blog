@@ -1,25 +1,27 @@
 baseurl = "https://nikstar.me/"
 languageCode = "en-us"
 title = "nikstar/blog"
-disableKinds = ["section", "taxonomy", "taxonomyTerm"]
+disableKinds = ["section", "taxonomy"]
 
 [params]
-	description = "The blog by Nikita (@nikstar) about machine learning, hacking, Telegram and other stuff I have not found yet"
-	author = "Nikita Starshinov"
+description = "The blog by Nikita (@nikstar) about machine learning, hacking, Telegram and other stuff I have not found yet"
+author = "Nikita Starshinov"
+
 
 [markup]
-  	[markup.highlight]
-		anchorLineNos = false
-		codeFences = true
-		guessSyntax = true
-		hl_Lines = ""
-		lineAnchors = ""
-		lineNoStart = 1
-		lineNos = false
-		lineNumbersInTable = true
-		noClasses = true
-		style = "xcode-dark"
-		tabWidth = 2
 
-	[markup.goldmark.renderer]
-		unsafe= true
+[markup.highlight]
+anchorLineNos = false
+codeFences = true
+guessSyntax = true
+hl_Lines = ""
+lineAnchors = ""
+lineNoStart = 1
+lineNos = false
+lineNumbersInTable = true
+noClasses = true
+style = "github-dark"
+tabWidth = 2
+
+[markup.goldmark.renderer]
+unsafe = true
