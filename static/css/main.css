@@ -259,7 +259,7 @@ body {
     margin: auto;
     /* display: ; */
     max-width: 800px;
-    padding: 0 6px 10px 8px;
+    padding: 0 6px 0px 8px;
 }
 
 
@@ -378,11 +378,14 @@ figure {
     /* margin-bottom: 40px; */
 }
 
+/* footer */
+
+main {
+    min-height: calc(100vh - 240px);
+}
+
 footer {
-    position: relative;
-    margin: 150px 0px 0px 0px;
-    display: block;
-    text-align: left;
+    margin: 150px 0px -30px 0px;
 }
 
 footer a, footer a:hover, footer a:focus {
@@ -393,9 +396,9 @@ footer a, footer a:hover, footer a:focus {
     float: right;
 }
 
-
-
-
+footer hr {
+    margin-bottom: 20px;
+}
 
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Layout - code @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
