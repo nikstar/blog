@@ -1,4 +1,7 @@
-/* fonts */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Typography @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 @font-face{
     font-family: 'JetBrains Mono';
     src: local('JetBrains Mono Regular'),
@@ -29,8 +32,117 @@
 }
 
 html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.8;
+}
 
+/* Typography - headers */
+
+h1, h2, h3, h4 {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 45px;
+}
+h2 {
+    font-size: 35px;
+}
+h3 {
+    font-size: 25px;
+}
+h4 {
+    font-size: 20px;
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h4 {
+        font-size: 1.0rem;
+    }
+}
+
+/* Typography - code */
+
+code {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+pre {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
+    font-weight: 400;
+}
+
+pre>code {
+    font-weight: 500;
+}
+
+@media (max-width: 450px) {
+    code {
+        font-size: 0.77rem;
+    }
+}
+
+/* Typography - misc */
+
+.time {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+figcaption {
+    font-size: 0.75rem;
+}
+
+footer {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 450px) {
+    .showcase-item {
+        font-size: 0.9em;
+    }
+}
+
+.showcase .tagline {
+    font-weight: 400;
+    font-size: 0.85em;
+}
+
+nav a, nav a:hover {
+    font-weight: bold;
+}
+
+section.showcase {
+    font-weight: bold;
+}
+
+nav {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+}
+
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Colors @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+html {
     --text-color: #111;
     --link-color: #4788f2;
     --link-hover-color: #105edd;
@@ -39,7 +151,7 @@ html {
     --code-color: rgb(196, 15, 60);
 }
 
-@media screen and (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     html {
         color-scheme: dark;
         --text-color: #eee;
@@ -51,19 +163,151 @@ html {
     }
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+html {
     color: var(--text-color);
+}
+
+code {
+    color: var(--code-color);
+    background-color: var(--secondary-background-color);
+}
+
+pre {
+    color: var(--text-color);
+    background-color: var(--secondary-background-color);
+}
+
+pre>code {
+    color: inherit;
+}
+
+.time {
+    color: var(--secondary-text-color);
+}
+
+footer {
+    color: var(--secondary-text-color);
+}
+
+nav ul.social svg {
+    color: inherit;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover, a:focus {
+    color: var(--link-hover-color);
+}
+
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Styling @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+a {
+    text-decoration: none;
+    transition: all 0.15s ease-in;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-hover-color);
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+*:not(pre)>code {
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+pre {
+    border-radius: 8px;
+    padding: 15px 15px 15px 15px;
+    margin: 0 15px 0 0;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Layout - general @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+body {
     
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
+    /* max-width: 1vf; */
 }
 
 .container {
+    /* position: relative; */
+    margin: auto;
+    /* display: ; */
     max-width: 800px;
-    margin: 0 6px 10px 8px;
+    padding: 0 6px 10px 8px;
 }
+
+
+
+h1, h2, h3, h4 {
+    line-height: 130%;
+    margin: 2em 0 0.75em;
+}
+
+
+.home h1 {
+    margin: 45px 0 20px;
+}
+
+
+.home h3 {
+    margin: 5px 0px;
+}
+
+p {
+    margin: 1em 0;
+}
+
+.home p {
+    margin-top: 0px;
+}
+
+
+ul, ol {
+    padding: 0;
+    margin: 20px 0 20px 25px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+    margin-bottom: 0;
+}
+
+li {
+    margin: 0px 0px 10px 0px;
+}
+
+
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Layout - nav @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 nav {
     height: 20px;
@@ -80,12 +324,10 @@ nav ul {
 
 nav a, nav a:hover {
     border-bottom: none;
-    font-weight: bold;
 }
 
 nav .home {
     float: left;
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
     text-decoration: none;
     border-bottom: none;
 }
@@ -96,7 +338,6 @@ nav .social li {
 }
 
 nav ul.social svg {
-    color: inherit;
     overflow: visible;
     width: .875em;
     display: inline-block;
@@ -105,80 +346,6 @@ nav ul.social svg {
     vertical-align: -.125em;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
-    font-weight: bold;
-    line-height: 130%;
-    margin: 2em 0 0.75em;
-}
-
-h1 {
-    font-size: 45px;
-}
-
-.home h1 {
-    margin: 45px 0 20px;
-}
-
-h2 {
-    font-size: 35px;
-}
-
-h3 {
-    font-size: 25px;
-}
-
-h4 {
-    font-size: 20px;
-}
-
-.home h3 {
-    margin: 5px 0px;
-}
-
-p {
-    margin: 1em 0;
-}
-
-.home p {
-    margin-top: 0px;
-}
-
-a {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: all 0.15s ease-in;
-    border-bottom: 1px solid transparent;
-}
-
-a:hover, a:focus {
-    color: var(--link-hover-color);
-    text-decoration: none;
-    border-bottom: 1px solid var(--link-hover-color);
-}
-
-ul, ol {
-    padding: 0;
-    margin: 20px 0 20px 25px;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-    margin-bottom: 0;
-}
-
-li {
-    margin: 0px 0px 10px 0px;
-}
-
-hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    border: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 
 section.is-imageBackgrounded img {
     max-width: 100%;
@@ -186,12 +353,8 @@ section.is-imageBackgrounded img {
 }
 
 .time {
-    font-size: 0.9rem;
-    color: var(--secondary-text-color);
     margin-bottom: 20px;
     display: block;
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
-    font-weight: bold;
 }
 
 .home .time {
@@ -215,49 +378,11 @@ figure {
     /* margin-bottom: 40px; */
 }
 
-figcaption {
-    font-size: 0.75rem;
-}
-
-code, pre {
-    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
-    font-size: 0.88rem;
-    color: var(--text-color);
-    background-color: var(--secondary-background-color);
-}
-
-code {
-    font-weight: 600;
-    padding: 2px 8px;
-    margin: auto 4px;
-    color: var(--code-color);
-    border-radius: 2px;
-}
-
-pre {
-    font-weight: 400;
-    display: block;
-    padding: 0 15px;
-    margin: auto 10px auto 0px;
-    line-height: 120%;
-    /* white-space: pre; */
-    white-space: pre-wrap;
-    border-radius: 8px;
-}
-
-pre > code {
-    font-weight: 400;
-    padding: 0;
-    color: inherit;
-}
-
 footer {
     position: relative;
     margin: 150px 0px 0px 0px;
     display: block;
     text-align: left;
-    font-size: 0.8rem;
-    color: var(--secondary-text-color);
 }
 
 footer a, footer a:hover, footer a:focus {
@@ -268,31 +393,28 @@ footer a, footer a:hover, footer a:focus {
     float: right;
 }
 
-@media screen and (max-width: 640px) {
-    h1 {
-        font-size: 1.75em;
-    }
- 
-    h2 {
-        font-size: 1.5em;
-    }
- 
-    h3 {
-        font-size: 1.25em;
-    }
 
-    h4 {
-        font-size: 1.0em;
-    }
 
-    h5 {
-        font-size: .75em;
-    }
 
-    h6 {
-        font-size: .5em;
-    }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Layout - code @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+
+pre {
+    overflow-x: auto;
 }
+
+code {
+    overflow-wrap: break-word;
+}
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Layout - showcase @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
 
 .showcase-container {
     overflow-x: hidden;
@@ -302,7 +424,6 @@ section.showcase {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
-    font-weight: bold;
     margin: auto -30px;
 }
 
@@ -312,7 +433,8 @@ section.showcase {
     margin: 0 30px;
 }
 
-@media screen and (max-width: 660px) {
+
+@media (max-width: 660px) {
     section.showcase {
         margin: auto -10px;        
     }
@@ -324,7 +446,7 @@ section.showcase {
 }
 
 
-@media screen and (max-width: 425px) {
+@media (max-width: 425px) {
     section.showcase {
         margin: auto -8px;        
     }
@@ -332,13 +454,10 @@ section.showcase {
     .showcase-item {
         width: 70px;
         margin: 0 8px;
-        font-size: 0.9em;
     }
 }
 
 .showcase .tagline {
-    font-weight: normal;
-    font-size: 0.85em;
     margin: auto -10px;
 }
 

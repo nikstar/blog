@@ -134,7 +134,6 @@ Note that directives are evaluated in order, so more selective `reverse_proxy /s
 The above example won’t handle `example.com/service` without a trailing slash. Use a selector to support it:
 
 ```caddyfile
-
 example.com {
 	@service path /service /service/*
 	handle @service {
