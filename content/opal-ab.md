@@ -3,7 +3,6 @@ title: "Opal AB"
 description: "Opal AB as an audiobook conveter for macOS"
 cover: "/img/opal-icon.png"
 type: showcase
-ios-app: true
 ---
 
 Opal AB is one stop for all you audiobook encoding needs.

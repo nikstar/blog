@@ -346,10 +346,17 @@ nav ul.social svg {
     vertical-align: -.125em;
 }
 
+section.is-imageBackgrounded {
+    padding-top: 15px;
+}
 
 section.is-imageBackgrounded img {
     max-width: 100%;
     max-height: 250px;
+}
+
+section.is-imageBackgrounded + h1 {
+    margin-top: 30px;
 }
 
 .time {
@@ -423,11 +430,20 @@ code {
     overflow-x: hidden;
 }
 
+section.showcase + section.showcase {
+    padding-top: 10px;
+}
+
 section.showcase {
     display: flex;
     justify-content: space-evenly;
     text-align: center;
     margin: auto -30px;
+    /* line-height: 120%; */
+}
+
+.showcase div.tagline {
+    line-height: 1.5;
 }
 
 .showcase-item {
@@ -435,7 +451,6 @@ section.showcase {
     width: 150px;
     margin: 0 30px;
 }
-
 
 @media (max-width: 660px) {
     section.showcase {
@@ -474,4 +489,8 @@ figure.ios img, img.ios {
 
 .showcase img {
     width: 100%;
+}
+
+img.macos {
+    transform: translateY(8%);
 }
