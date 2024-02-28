@@ -21,4 +21,4 @@ Check it out on the [App Store](https://apps.apple.com/us/app/audiobook-converte
 
 ## Support
 
-Opal AB is new and still in active development. You can send feedback and report any issues [by email](mailto:feedback@nikstar.me?subject=Opal%20AB%20feedback) or [on Telegram](https://t.me/nikstar).
+Opal AB is new and still in active development. You can send feedback and report any issues [by email](mailto:support@nikstar.me?subject=Opal%20AB%20feedback) or [on Telegram](https://t.me/nikstar).
